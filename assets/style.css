@@ -1,0 +1,43 @@
+@font-face {
+    font-family: "OpenSans";
+    src: url("./OpenSans/OpenSans-Regular.ttf");
+}
+@font-face {
+    font-family: "OpenSansBold";
+    src: url("./OpenSans/OpenSans-Bold.ttf");
+}
+
+
+
+body {
+    font-family: OpenSansBold;
+    background-image: url(./svg/home.svg);
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-size: cover;
+    cursor: default;
+}
+
+.logo {
+    position: absolute;
+    top: 32px; left: 17px;
+}
+.navbar {
+    color: #141414;
+    position: absolute;
+    Text-align: left;
+    font-size: 32px;
+}
+.mainText {
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+.br {
+    display: block;
+    margin: 2px 0;
+}
+.smallbr {
+    display: block;
+    margin: -6px 0;
+}
