@@ -8,23 +8,61 @@
     <link rel="stylesheet" href="./assets/style.css">
 	  <script src="transition.js"></script>
   </head>
-  <body>
+  <body id = body>
     <!-- Navbar at the top -->
-    <img src = "./assets/svg/logo_white.svg" width = "54" height = "54" class = "logo">
-    <div class = "navbar" style = "top: 37px; left: 89px;">MYTOOLKIT</div>
-    <div class = "navbar" style = "top: 37px; left: 1038px;">ABOUT THE TOOLS</div>
-    <div class = "navbar" style = "top: 37px; left: 1360px;" onclick="console.log('Display login page')">LOGIN</div>
+    <img src = "./assets/svg/logo_white.svg" width = "3.55%" height = "auto" class = "logo">
+    <div class = "navbar" style = "top: 4.25%; left: 5.8%;">MYTOOLKIT</div>
+    <div class = "navbar" style = "top: 4.25%; left: 67.556%;">ABOUT THE TOOLS</div>
+    <div class = "navbar" style = "top: 4.25%; left: 88.555%;" onclick="console.log('Display login page')">LOGIN</div>
     <!-- Navbar at the top -->
     
     <!-- Main text (name, description, and get started) -->
-    <div class = "mainText" style = "top: 211px;font-size: 98px;color: #141414;">MyToolkit</div>
-    <div class = "mainText" style = "top: 237px;font-size: 55.5px;color: #535454;">All the tools you'll ever need<span class = "br"></span>all in one place</div>
-    <div class = "mainText" style = "top: 306px;font-size: 37.5px;color: #141414;">Get Started<span class = "smallbr"></span>↓</div>
+    <div class = "mainText" id = "mainText1" style = "top: 211px; font-size: 98px;color: #141414;">MyToolkit</div>
+    <div class = "mainText" id = "mainText2" style = "top: 237px; font-size: 55.5px;color: #535454;">All the tools you'll ever need<span class = "br"></span>all in one place</div>
+    <div class = "mainText" id = "mainText3" style = "top: 306px; font-size: 37.5px;color: #141414;">Get Started<span class = "smallbr"></span>↓</div>
     <!-- Main text (name, description, and get started) -->
 
     <!-- Sidebar -->
     
     <!-- Sidebar -->
   </body>
+  
+  <!-- why was the solution so easy ive been looking for this for literal years -->
+  <script>
+    window.onresize = resize;
+    function resize () {
+      var current = window.innerWidth;
+      var size = window.innerWidth/1536;
+
+      // NAVBAR RESIZE
+      var navbar_Font = size * 32;
+      var navbar_elements = document.getElementsByClassName('navbar');
+      for (var i = 0; i < navbar_elements.length; i++) {
+        var navbar_element = navbar_elements[i];
+        navbar_element.style.fontSize = navbar_Font + "px";
+      }
+      // NAVBAR RESIZE
+
+      // MAIN TEXT RESIZE
+      var mainText_element = document.getElementById('mainText1');
+      var mainText_Font = size * 98;
+      mainText_element.style.fontSize = mainText_Font + "px";
+      var mainText_Top = size * 211;
+      mainText_element.style.top = mainText_Top + "px";
+
+      var mainText_element = document.getElementById('mainText2');
+      var mainText_Font = size * 55.5;
+      mainText_element.style.fontSize = mainText_Font + "px";
+      var mainText_Top = size * 237;
+      mainText_element.style.top = mainText_Top + "px";
+
+      var mainText_element = document.getElementById('mainText3');
+      var mainText_Font = size * 37.5;
+      mainText_element.style.fontSize = mainText_Font + "px";
+      var mainText_Top = size * 306;
+      mainText_element.style.top = mainText_Top + "px";
+      // MAIN TEXT RESIZE
+    }
+  </script>
 </html>
 
