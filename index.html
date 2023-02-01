@@ -10,7 +10,7 @@
   </head>
   <body id = body>
     <!-- Navbar at the top -->
-    <img src = "./assets/svg/logo_white.svg" id = "navbar0" width = "54.5" height = "54.5" class = "logo">
+    <img src = "./assets/svg/logo_white.svg" id = "navbar0" width = "54.5" height = "54.5" class = "logo" style="top: 32px; left: 17px;">
     <div class = "navbar" id = "navbar1" style = "top: 37px; left: 89px;">MYTOOLKIT</div>
     <div class = "navbar" id = "navbar2" style = "top: 37px; left: 1038px;">ABOUT THE TOOLS</div>
     <div class = "navbar" id = "navbar3" style = "top: 37px; left: 1360px;" onclick="console.log('Display login page')">LOGIN</div>
@@ -47,6 +47,10 @@
       navbar_element.style.width = navbar_Height + "px";
       var navbar_Width = size * 54.5;
       navbar_element.style.height = navbar_Width + "px";
+      var navbar_Top = size * 32;
+      navbar_element.style.top = navbar_Top + "px";
+      var navbar_Left = size * 17;
+      navbar_element.style.left = navbar_Left + "px";
 
       var navbar_element = document.getElementById('navbar1');
       var navbar_Top = size * 37;
