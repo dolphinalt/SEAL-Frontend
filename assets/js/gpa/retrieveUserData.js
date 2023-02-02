@@ -1,26 +1,17 @@
-const fetch = require("node-fetch");
+
+
 function retrieveDBFull (){
-    fetch("http://127.0.0.1:8086/api/users/", {
+    const options = {
         method: 'GET', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, *cors, same-origin
         cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'omit',
+        credentials: 'omit', // include, *same-origin, omit
         headers: {
           'Content-Type': 'application/json'
+          // 'Content-Type': 'application/x-www-form-urlencoded',
         },
-        // body: JSON.stringify(data)
-    })
-    .then(response => {
-        if (response.status !== 200) {
-            error('GET API response failure: ' + response.status);
-            return;
-        }
-        response.json().then(data => {
-            console.log(data);
-        })
-    })
-
-
+    };
+    const put_options = {...options, method: 'PUT'};
 
 }
 
