@@ -20,23 +20,38 @@ body {
 
 .logo {
     position: absolute;
+    z-index: 2;
+}
+.sidebar {
+    position: absolute;
+    z-index: 1;
+}
+.sidebarClickables {
+    color: rgb(20, 20, 20);
+    position: absolute;
+    font-size: 32px;
+    z-index: 2;
 }
 .navbar {
     color: #141414;
     position: absolute;
     Text-align: left;
     font-size: 32px;
+    z-index: 2;
 }
 .mainText {
     margin: auto;
     text-align: center;
     position: relative;
+    z-index: 0;
 }
 .br {
     display: block;
     margin: 2px 0;
+    z-index: 0;
 }
 .smallbr {
     display: block;
     margin: -6px 0;
+    z-index: 0;
 }

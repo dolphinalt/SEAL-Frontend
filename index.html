@@ -10,37 +10,52 @@
   </head>
   <body id = body>
     <!-- Navbar at the top -->
-    <img src = "./assets/svg/logo_white.svg" id = "navbar0" width = "54.5" height = "54.5" class = "logo" style="top: 32px; left: 17px;">
-    <div class = "navbar" id = "navbar1" style = "top: 37px; left: 89px;">MYTOOLKIT</div>
+    <img src = "./assets/svg/logo_white.svg" id = "navbar0" onclick = "showSidebar();" width = "54.5" height = "54.5" class = "logo" style="top: 32px; left: 17px;">
+    <div class = "navbar" id = "navbar1" onclick = "showSidebar();" style = "top: 37px; left: 89px;">MYTOOLKIT</div>
     <div class = "navbar" id = "navbar2" style = "top: 37px; left: 1038px;">ABOUT THE TOOLS</div>
     <div class = "navbar" id = "navbar3" style = "top: 37px; left: 1360px;" onclick="console.log('Display login page')">LOGIN</div>
     <!-- Navbar at the top -->
-    
+
+    <!-- Sidebar -->
+    <img src = "./assets/svg/sidebar.svg" id = "sidebar0" width = "451.2" height = "864" class = "sidebar" style = "top:-0.5px; left:-451.2px"> <!-- small issue here, corner is not fully rounded-->
+    <div class = "sidebarClickables" id = "sidebar1" style = "top: 117px; left: 89px;opacity: 0;" onclick="console.log('Display login page')">MYSCHEDULE</div>
+    <div class = "sidebarClickables" id = "sidebar2" style = "top: 197px; left: 89px;opacity: 0;" onclick="console.log('Display login page')">MYGPA</div>
+    <div class = "sidebarClickables" id = "sidebar3" style = "top: 277px; left: 89px;opacity: 0;" onclick="console.log('Display login page')">MYCLUBS</div>
+    <div class = "sidebarClickables" id = "sidebar4" style = "top: 357px; left: 89px;opacity: 0;" onclick="console.log('Display login page')">MYDAY</div>
+    <!-- Sidebar -->
+
     <!-- Main text (name, description, and get started) -->
     <div class = "mainText" id = "mainText0" style = "top: 211px; font-size: 98px;color: #141414;">MyToolkit</div>
     <div class = "mainText" id = "mainText1" style = "top: 237px; font-size: 55.5px;color: #535454;">All the tools you'll ever need<span class = "br"></span>all in one place</div>
     <div class = "mainText" id = "mainText2" style = "top: 306px; font-size: 37.5px;color: #141414;">Get Started<span class = "smallbr"></span>↓</div>
     <!-- Main text (name, description, and get started) -->
-
-    <!-- Sidebar -->
-    
-    <!-- Sidebar -->
   </body>
-  
+
   <!-- why was the solution so easy ive been looking for this for literal years -->
-  <script>
+  <script> // DYNAMIC RESIZING
+    function dynamic_TextPositioning(idName, origionalTop, origionalLeft, size) {
+      var element = document.getElementById(idName);
+      var element_Top = size * origionalTop;
+      element.style.top = element_Top + "px";
+      var element_Left = size * origionalLeft;
+      element.style.left = element_Left + "px";
+    }
+    function dynamic_TextSize(className, origionalSize, size) {
+      var element_Font = size * origionalSize;
+      var elements = document.getElementsByClassName(className);
+      for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        element.style.fontSize = element_Font + "px";
+      }
+    }
+
     window.onresize = resize;
     function resize () {
       var current = window.innerWidth;
       var size = window.innerWidth/1536;
 
       // NAVBAR RESIZE
-      var navbar_Font = size * 32;
-      var navbar_elements = document.getElementsByClassName('navbar');
-      for (var i = 0; i < navbar_elements.length; i++) {
-        var navbar_element = navbar_elements[i];
-        navbar_element.style.fontSize = navbar_Font + "px";
-      }
+      dynamic_TextSize('navbar', 32, size)
 
       var navbar_element = document.getElementById('navbar0');
       var navbar_Height = size * 54.5;
@@ -52,25 +67,25 @@
       var navbar_Left = size * 17;
       navbar_element.style.left = navbar_Left + "px";
 
-      var navbar_element = document.getElementById('navbar1');
-      var navbar_Top = size * 37;
-      navbar_element.style.top = navbar_Top + "px";
-      var navbar_Left = size * 89;
-      navbar_element.style.left = navbar_Left + "px";
-
-      var navbar_element = document.getElementById('navbar2');
-      var navbar_Top = size * 37;
-      navbar_element.style.top = navbar_Top + "px";
-      var navbar_Left = size * 1038;
-      navbar_element.style.left = navbar_Left + "px";
-
-      var navbar_element = document.getElementById('navbar3');
-      var navbar_Top = size * 37;
-      navbar_element.style.top = navbar_Top + "px";
-      var navbar_Left = size * 1360;
-      navbar_element.style.left = navbar_Left + "px";
-
+      dynamic_TextPositioning('navbar1', 37, 89, size)
+      dynamic_TextPositioning('navbar2', 37, 1038, size)
+      dynamic_TextPositioning('navbar3', 37, 1360, size)
       // NAVBAR RESIZE
+
+      // SIDEBAR RESIZE
+      dynamic_TextSize('sidebarClickables', 32, size)
+
+      var sidebar_element = document.getElementById('sidebar0');
+      var sidebar_Height = size * 864;
+      sidebar_element.style.height = sidebar_Height + "px";
+      var sidebar_Width = size * 451.2;
+      sidebar_element.style.width = sidebar_Width + "px";
+
+      dynamic_TextPositioning('sidebar1', 117, 89, size)
+      dynamic_TextPositioning('sidebar2', 197, 89, size)
+      dynamic_TextPositioning('sidebar3', 277, 89, size)
+      dynamic_TextPositioning('sidebar4', 357, 89, size)
+      // SIDEBAR RESIZE
 
       // MAIN TEXT RESIZE
       var mainText_element = document.getElementById('mainText0');
@@ -91,6 +106,42 @@
       var mainText_Top = size * 306;
       mainText_element.style.top = mainText_Top + "px";
       // MAIN TEXT RESIZE
+    }
+
+    //ANIMATIONS
+    var sidebar_Expanded = 0;
+    function showSidebar() {
+      var sidebar_Width = document.getElementById("sidebar0").offsetWidth;
+      if (sidebar_Expanded == 0) {
+        document.getElementById("sidebar0").style.left = "-74.5px";
+        document.getElementById("sidebar1").style.top = "117px";
+        document.getElementById("sidebar1").style.opacity = "0.5";
+
+        document.getElementById("sidebar2").style.top = "197px";
+        document.getElementById("sidebar2").style.opacity = "0.5";
+
+        document.getElementById("sidebar3").style.top = "277px";
+        document.getElementById("sidebar3").style.opacity = "0.5";
+
+        document.getElementById("sidebar4").style.top = "357px";
+        document.getElementById("sidebar4").style.opacity = "0.5";
+        sidebar_Expanded = 1;
+      } else if (sidebar_Expanded == 1) {
+        document.getElementById("sidebar0").style.left = "-" + sidebar_Width + "px";
+        document.getElementById("sidebar1").style.top = "97px";
+        document.getElementById("sidebar1").style.opacity = "0";
+
+        document.getElementById("sidebar2").style.top = "177px";
+        document.getElementById("sidebar2").style.opacity = "0";
+
+        document.getElementById("sidebar3").style.top = "257px";
+        document.getElementById("sidebar3").style.opacity = "0";
+        
+        document.getElementById("sidebar4").style.top = "337px";
+        document.getElementById("sidebar4").style.opacity = "0";
+        sidebar_Expanded = 0;
+      }
+      console.log(sidebar_Expanded)
     }
   </script>
 </html>
