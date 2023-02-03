@@ -72,6 +72,10 @@ input[type="password"] {font-family: OpenSansBold;background: transparent;border
     position: absolute;
     z-index: 0;
 }
+.loginClose {
+    position: absolute;
+    z-index: 1;
+}
 /* login screen */
 .loginText {
     color: rgb(20, 20, 20);
