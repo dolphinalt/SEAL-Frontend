@@ -9,7 +9,7 @@
 
 
 
-body {
+.homeBody {
     font-family: OpenSansBold;
     background-image: url(./svg/home.svg);
     background-repeat: no-repeat;
@@ -17,7 +17,10 @@ body {
     background-size: cover;
     cursor: default;
 }
-
+.elseBody {
+    font-family: OpenSansBold;
+    cursor: default;
+}
 .logo {
     position: absolute;
     z-index: 2;

@@ -6,14 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MyToolkit</title>
     <link rel="stylesheet" href="./assets/style.css">
-	  <script src="transition.js"></script>
   </head>
-  <body id = body>
+  <body class = "homeBody">
     <!-- Navbar at the top -->
     <img src = "./assets/svg/logo_white.svg" id = "navbar0" onclick = "showSidebar();" width = "54.5" height = "54.5" class = "logo" style="top: 32px; left: 17px;">
     <div class = "navbar" id = "navbar1" onclick = "showSidebar();" style = "top: 37px; left: 89px;">MYTOOLKIT</div>
     <div class = "navbar" id = "navbar2" style = "top: 37px; left: 1038px;">ABOUT THE TOOLS</div>
-    <div class = "navbar" id = "navbar3" style = "top: 37px; left: 1360px;" onclick="console.log('Display login page')">LOGIN</div>
+    <div class = "navbar" id = "navbar3" style = "top: 37px; left: 1360px;" onclick="window.location = './login.html';">LOGIN</div>
     <!-- Navbar at the top -->
 
     <!-- Sidebar -->
@@ -47,6 +46,9 @@
         var element = elements[i];
         element.style.fontSize = element_Font + "px";
       }
+    }
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
     }
 
     window.onresize = resize;
@@ -107,42 +109,7 @@
       mainText_element.style.top = mainText_Top + "px";
       // MAIN TEXT RESIZE
     }
-
-    //ANIMATIONS
-    var sidebar_Expanded = 0;
-    function showSidebar() {
-      var sidebar_Width = document.getElementById("sidebar0").offsetWidth;
-      if (sidebar_Expanded == 0) {
-        document.getElementById("sidebar0").style.left = "-74.5px";
-        document.getElementById("sidebar1").style.top = "117px";
-        document.getElementById("sidebar1").style.opacity = "0.5";
-
-        document.getElementById("sidebar2").style.top = "197px";
-        document.getElementById("sidebar2").style.opacity = "0.5";
-
-        document.getElementById("sidebar3").style.top = "277px";
-        document.getElementById("sidebar3").style.opacity = "0.5";
-
-        document.getElementById("sidebar4").style.top = "357px";
-        document.getElementById("sidebar4").style.opacity = "0.5";
-        sidebar_Expanded = 1;
-      } else if (sidebar_Expanded == 1) {
-        document.getElementById("sidebar0").style.left = "-" + sidebar_Width + "px";
-        document.getElementById("sidebar1").style.top = "97px";
-        document.getElementById("sidebar1").style.opacity = "0";
-
-        document.getElementById("sidebar2").style.top = "177px";
-        document.getElementById("sidebar2").style.opacity = "0";
-
-        document.getElementById("sidebar3").style.top = "257px";
-        document.getElementById("sidebar3").style.opacity = "0";
-        
-        document.getElementById("sidebar4").style.top = "337px";
-        document.getElementById("sidebar4").style.opacity = "0";
-        sidebar_Expanded = 0;
-      }
-      console.log(sidebar_Expanded)
-    }
   </script>
+  <script src="./assets/js/animations.js"></script>
 </html>
 
