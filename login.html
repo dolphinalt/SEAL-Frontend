@@ -23,8 +23,37 @@
     <div class = "sidebarClickables" id = "sidebar4" style = "top: 357px; left: 89px;opacity: 0;" onclick="console.log('Display login page')">MYDAY</div>
     <!-- Sidebar -->
 
-    <!-- Main text (name, description, and get started) -->
-    <!-- Main text (name, description, and get started) -->
+    <!-- Login box -->
+    <img src = "./assets/svg/login_box.svg" id = "login0" width = "506.5" height = "auto" class = "loginBox" style="top:160.75px; left: 514.75px;">
+    <img src = "./assets/svg/login_text_entry.svg" id = "login1" width = "420" height = "auto" class = "loginBox" style="top:249.75px; left: 557.75px;">
+    <img src = "./assets/svg/login_text_entry.svg" id = "login2" width = "420" height = "auto" class = "loginBox" style="top:407px; left: 557.75px;">
+    <img src = "./assets/svg/go_button.svg" id = "login3" width = "506" height = "auto" class = "loginBox" style="top:648.75px; left: 514.75px;">
+    <div class = "loginText" id = "login4" style = "top: 189px; left: 557.75px;">Username</div>
+    <div class = "loginText" id = "login7" style = "top: 346px; left: 557.75px;">Password</div>
+    <div class = "newAccount" id = "login9" style = "top: 504px; left: 612px;">Don't have an account?<br><u><a href="./signup.html">Sign up!</a></u></div>
+    <div class = "goText" id = "login9" style = "top: 643px; left: 728px;">Go!</div>
+    <div class = "loginEntryHolderText" id = "login8" style = "top: 417.25px; left: 585.5px;opacity:0.25;">Password</div>
+    <div class = "loginEntryHolderText" id = "login5" style = "top: 260px; left: 585.5px;opacity:0.25;">Username</div>
+    <input class = "loginEntryHolderText" type="text" id="username" style="width:355px;top: 260px; left: 585.5px;">
+    <input class = "loginEntryHolderText" type="password" id="password" style="width:355px;top: 417.25px; left: 585.5px;">
+    <!-- Login box -->
   </body>
+  <script> // work on speeding up this execution
+    window.onkeyup = keyup;
+    function keyup(e) {
+      if (document.getElementById("username").value != "" && document.getElementById("login5").style.opacity == 0.25) {
+        document.getElementById("login5").style.opacity = "0";
+      } else if (document.getElementById("username").value == "" && document.getElementById("login5").style.opacity == 0) {
+        document.getElementById("login5").style.opacity = "0.25";
+      }
+
+      if (document.getElementById("password").value != "" && document.getElementById("login8").style.opacity == 0.25) {
+        document.getElementById("login8").style.opacity = "0";
+      } else if (document.getElementById("password").value == "" && document.getElementById("login8").style.opacity == 0) {
+        document.getElementById("login8").style.opacity = "0.25";
+        console.log("notinvis")
+      }
+    }
+  </script>
   <script src="./assets/js/animations.js"></script>
 </html>
