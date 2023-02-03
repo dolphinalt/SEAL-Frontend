@@ -96,7 +96,6 @@ input[type="password"] {font-family: OpenSansBold;background: transparent;border
 .goText {
     position: absolute;
     color: rgb(20, 20, 20);
-    opacity: 0.5;
     font-size: 48px;
     text-align: center;
 }
