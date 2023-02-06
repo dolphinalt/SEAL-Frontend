@@ -47,6 +47,17 @@
         element.style.fontSize = element_Font + "px";
       }
     }
+    function dynamic_imgSize(className, origionalHeight, origionalWidth, origionalTop, origionalLeft, size) {
+      var element = document.getElementById('navbar0');
+      var element_Height = size * origionalHeight;
+      element.style.width = element_Height + "px";
+      var element_Width = size * origionalWidth;
+      element.style.height = element_Width + "px";
+      var element_Top = size * origionalTop;
+      element.style.top = element_Top + "px";
+      var element_Left = size * origionalLeft;
+      element.style.left = element_Left + "px";
+    }
     function sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
@@ -58,17 +69,7 @@
 
       // NAVBAR RESIZE
       dynamic_TextSize('navbar', 32, size)
-
-      var navbar_element = document.getElementById('navbar0');
-      var navbar_Height = size * 54.5;
-      navbar_element.style.width = navbar_Height + "px";
-      var navbar_Width = size * 54.5;
-      navbar_element.style.height = navbar_Width + "px";
-      var navbar_Top = size * 32;
-      navbar_element.style.top = navbar_Top + "px";
-      var navbar_Left = size * 17;
-      navbar_element.style.left = navbar_Left + "px";
-
+      dynamic_imgSize('navbar0', 54.5, 54.5, 32, 17, size)
       dynamic_TextPositioning('navbar1', 37, 89, size)
       dynamic_TextPositioning('navbar2', 37, 1038, size)
       dynamic_TextPositioning('navbar3', 37, 1360, size)

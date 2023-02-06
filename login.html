@@ -39,6 +39,59 @@
     <input class = "loginEntryHolderText" type="password" id="password" style="width:355px;top: 417.25px; left: 585.5px;">
     <!-- Login box -->
   </body>
+  <script>
+    function dynamic_TextPositioning(idName, origionalTop, origionalLeft, size) {
+      var element = document.getElementById(idName);
+      var element_Top = size * origionalTop;
+      element.style.top = element_Top + "px";
+      var element_Left = size * origionalLeft;
+      element.style.left = element_Left + "px";
+    }
+    function dynamic_TextSize(className, origionalSize, size) {
+      var element_Font = size * origionalSize;
+      var elements = document.getElementsByClassName(className);
+      for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        element.style.fontSize = element_Font + "px";
+      }
+    }
+    function dynamic_imgSize(className, origionalHeight, origionalWidth, origionalTop, origionalLeft, size) {
+      var element = document.getElementById('navbar0');
+      var element_Height = size * origionalHeight;
+      element.style.width = element_Height + "px";
+      var element_Width = size * origionalWidth;
+      element.style.height = element_Width + "px";
+      var element_Top = size * origionalTop;
+      element.style.top = element_Top + "px";
+      var element_Left = size * origionalLeft;
+      element.style.left = element_Left + "px";
+    }
+    // NAVBAR RESIZE
+    dynamic_TextSize('navbar', 32, size)
+      dynamic_imgSize('navbar0', 54.5, 54.5, 32, 17, size)
+      dynamic_TextPositioning('navbar1', 37, 89, size)
+      dynamic_TextPositioning('navbar2', 37, 1038, size)
+      dynamic_TextPositioning('navbar3', 37, 1360, size)
+      // NAVBAR RESIZE
+
+      // SIDEBAR RESIZE
+      dynamic_TextSize('sidebarClickables', 32, size)
+
+      var sidebar_element = document.getElementById('sidebar0');
+      var sidebar_Height = size * 864;
+      sidebar_element.style.height = sidebar_Height + "px";
+      var sidebar_Width = size * 451.2;
+      sidebar_element.style.width = sidebar_Width + "px";
+
+      dynamic_TextPositioning('sidebar1', 117, 89, size)
+      dynamic_TextPositioning('sidebar2', 197, 89, size)
+      dynamic_TextPositioning('sidebar3', 277, 89, size)
+      dynamic_TextPositioning('sidebar4', 357, 89, size)
+      // SIDEBAR RESIZE
+
+      // LOGIN RESIZE
+      // LOGIN RESIZE
+  </script>
   <script> // work on speeding up this execution
     window.onkeyup = keyup;
     function keyup(e) {
