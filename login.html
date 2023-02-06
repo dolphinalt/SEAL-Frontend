@@ -66,8 +66,13 @@
       var element_Left = size * origionalLeft;
       element.style.left = element_Left + "px";
     }
-    // NAVBAR RESIZE
-    dynamic_TextSize('navbar', 32, size)
+    window.onresize = resize;
+    function resize () {
+      var current = window.innerWidth;
+      var size = window.innerWidth/1536;
+
+      // NAVBAR RESIZE
+      dynamic_TextSize('navbar', 32, size)
       dynamic_imgSize('navbar0', 54.5, 54.5, 32, 17, size)
       dynamic_TextPositioning('navbar1', 37, 89, size)
       dynamic_TextPositioning('navbar2', 37, 1038, size)
@@ -91,6 +96,7 @@
 
       // LOGIN RESIZE
       // LOGIN RESIZE
+    }
   </script>
   <script> // work on speeding up this execution
     window.onkeyup = keyup;
