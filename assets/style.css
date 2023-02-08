@@ -11,8 +11,8 @@ a:link {color: rgb(20, 20, 20);}
 a:visited {color: rgb(20, 20, 20);}
 a:hover {color: rgb(20, 20, 20);}
 a:active {color: rgb(20, 20, 20);}
-input[type="text"] {font-family: OpenSansBold;background: transparent;border: none;}
-input[type="password"] {font-family: OpenSansBold;background: transparent;border: none;}
+input[type="text"] {font-family: OpenSansBold;background: transparent;border: none;outline: none;}
+input[type="password"] {font-family: OpenSansBold;background: transparent;border: none;outline: none;}
 
 /* index */
 .homeBody {
