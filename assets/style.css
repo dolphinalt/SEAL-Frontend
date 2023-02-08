@@ -118,3 +118,19 @@ input[type="password"] {font-family: OpenSansBold;background: transparent;border
     position: absolute;
     font-size: 48px;
 }
+/* GPA */
+.gpaEntryHolderText {
+    color: rgb(83, 84, 84);
+    position: absolute;
+    font-size: 27px;
+}
+.totalGpaText {
+    color: rgb(20, 20, 20);
+    position: absolute;
+    font-size: 48px;
+}
+.gpaCompareText {
+    color: rgb(20, 20, 20);
+    position: absolute;
+    font-size: 34px;
+}
