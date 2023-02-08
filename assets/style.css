@@ -49,6 +49,10 @@ input[type="password"] {font-family: OpenSansBold;background: transparent;border
     position: absolute;
     z-index: 1;
 }
+.taskboard {
+    position: absolute;
+    z-index: 0;
+}
 .sidebarClickables {
     color: rgb(20, 20, 20);
     position: absolute;
@@ -102,4 +106,15 @@ input[type="password"] {font-family: OpenSansBold;background: transparent;border
     color: rgb(20, 20, 20);
     font-size: 48px;
     text-align: center;
+}
+/* MyDay */
+.taskEntryHolderText {
+    color: rgb(20, 20, 20);
+    position: absolute;
+    font-size: 34px;
+}
+.taskETAText {
+    color: rgb(20, 20, 20);
+    position: absolute;
+    font-size: 48px;
 }
