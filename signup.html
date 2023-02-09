@@ -30,12 +30,12 @@
     <img src = "./assets/svg/login_text_entry.svg" id = "signup3" width = "420" height = "54" class = "loginBox" style="top:509px; left: 557.75px;">
     <img src = "./assets/svg/pwbar.svg" id = "signup4" width = "420" height = "29" class = "loginBox" style="top:583px; left: 557.75px;">
     <img src = "./assets/svg/pwrating.svg" id = "signup5" width = "420" height = "29" class = "loginBox" style="top:583px; left: 557.75px;">
-    <img src = "./assets/svg/go_button.svg" id = "signup6" width = "507" height = "54" class = "loginBox" style="top:752px; left: 515px;">
+    <img src = "./assets/svg/go_button.svg" id = "signup6" width = "507" height = "54" class = "loginBox" style="top:752px; left: 515px;" onclick = "go();">
     <div class = "loginText" id = "signup7" style = "top: 148px; left: 557.75px;">Full Name</div>
     <div class = "loginText" id = "signup8" style = "top: 292px; left: 557.75px;">Username</div>
     <div class = "loginText" id = "signup9" style = "top: 449px; left: 557.75px;">Password</div>
     <div class = "loginSmall" id = "signup10" style = "top: 618px; left: 557.75px;">Strength: Enter a password</div>
-    <div class = "goText" id = "signup11" style = "top: 745px; left: 728px;opacity: 0.5;">Go!</div>
+    <div class = "goText" id = "signup11" style = "top: 745px; left: 728px;opacity: 0.5;" onclick = "go();">Go!</div>
     <div class = "loginEntryHolderText" id = "signup12" style = "top: 218px; left: 585.5px;opacity:0.25;">First Name Last Name</div>
     <div class = "loginEntryHolderText" id = "signup13" style = "top: 362px; left: 585.5px;opacity:0.25;">Username</div>
     <div class = "loginEntryHolderText" id = "signup14" style = "top: 519px; left: 585.5px;opacity:0.25;">Password</div>
@@ -120,6 +120,14 @@
       } else if (document.getElementById("password").value == "" || document.getElementById("username").value == "" || document.getElementById("fullName").value == "") {
         document.getElementById("signup6").src = "./assets/svg/go_button.svg";
         document.getElementById("signup11").style.opacity = "0.5";
+      }
+    }
+    function go() {
+      if ((document.getElementById("signup6").src).includes("yellow")) {
+        fullname = document.getElementById("fullName").value
+        username = document.getElementById("username").value
+        password = document.getElementById("password").value
+        console.log("Create user " + fullname + " with username " + username + " and password " + password)
       }
     }
   </script>
