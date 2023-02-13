@@ -1,4 +1,22 @@
 // 1 means completed, 0 means not
+function httpGet() {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", "http://13.58.102.35/api/users/time", false);
+    xmlHttp.send(null);
+    json = JSON.parse(xmlHttp.responseText);
+    return json;
+}
+
+
+get = httpGet();
+getTasks = get[0]["tasks"];
+getTimes = get[0]["times"];
+getTasksCompleted = get[0]["tasksCompleted"];
+
+
+
+// console.log(getTasks[0]["tasks"]);
+
 function calculateSleepTime(taskCompleted, times) {
     let length = taskCompleted.length;
     var totaltime = 0;
@@ -26,5 +44,6 @@ function calculateSleepTime(taskCompleted, times) {
     }
 
     var SleepTime = String(hours) + ":" + String(minutes);
+    document.getElementById("task0").innerHTML = "Estimated Sleep Time: " + SleepTime;
     return SleepTime;
 }
