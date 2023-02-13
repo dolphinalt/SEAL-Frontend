@@ -3,8 +3,8 @@ function calculateSleepTime(taskCompleted, times) {
     let length = taskCompleted.length;
     var totaltime = 0;
     for (let i = 0; i < length; i++) {
-        if (taskCompleted[i] == 0) {
-            totaltime = totaltime + times[i];
+        if (taskCompleted[i] == "0") {
+            totaltime = totaltime + parseInt(times[i]);
         }
     }
     var today = new Date();
@@ -12,7 +12,7 @@ function calculateSleepTime(taskCompleted, times) {
     var minutes = today.getMinutes();
     
     var taskMinutes = totaltime % 60;
-    totaltime = totaltime - 60;
+    totaltime = totaltime - taskMinutes;
     var taskHours = totaltime / 60;
     
     hours = hours + taskHours;
