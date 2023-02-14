@@ -13,6 +13,10 @@ getTasks = get[0]["tasks"];
 getTimes = get[0]["times"];
 getTasksCompleted = get[0]["tasksCompleted"];
 
+for (let i = 0; i < getTasks.length; i++) {
+    push2(getTasks[i], getTimes[i]);
+}
+
 
 
 // console.log(getTasks[0]["tasks"]);
