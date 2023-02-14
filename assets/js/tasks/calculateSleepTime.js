@@ -1,7 +1,7 @@
 // 1 means completed, 0 means not
 function httpGet() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", "http://13.58.102.35/api/users/time", false);
+    xmlHttp.open("PUT", "http://13.58.102.35/api/users/updatetasks", false);
     xmlHttp.send(null);
     json = JSON.parse(xmlHttp.responseText);
     return json;
