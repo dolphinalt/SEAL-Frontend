@@ -8,4 +8,4 @@ function httpGet() {
 
 getResult = httpGet();
 
-console.log(getResult[0]["classes"]);
+console.log(getResult[0]["gpa"]);
