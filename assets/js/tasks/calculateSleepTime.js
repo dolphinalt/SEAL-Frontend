@@ -1,35 +1,4 @@
 // // 1 means completed, 0 means not
-// class http {
-//     GET () {
-//         var xmlHttp = new XMLHttpRequest();
-//         xmlHttp.open("GET", "http://seal.nighthawkcodingsociety.com/api/users/", false); // false for synchronous request
-//         xmlHttp.send(null);
-//         json = JSON.parse(xmlHttp.responseText);
-//         console.log(json);
-//         return json;
-//     }
-//     POST () {
-//         var xmlHttp = new XMLHttpRequest();
-//         xmlHttp.open("POST", "http://seal.nighthawkcodingsociety.com/api/users/", false); // false for synchronous request
-//         xmlHttp.send(null);
-//         json = JSON.parse(xmlHttp.responseText);
-//         return json;
-//     }
-//     DELETE () {
-//         var xmlHttp = new XMLHttpRequest();
-//         xmlHttp.open("DELETE", "http://seal.nighthawkcodingsociety.com/api/users/", false); // false for synchronous request
-//         xmlHttp.send(null);
-//         json = JSON.parse(xmlHttp.responseText);
-//         return json;
-//     }
-//     PUT () {
-//         var xmlHttp = new XMLHttpRequest();
-//         xmlHttp.open("PUT", "http://seal.nighthawkcodingsociety.com/api/users/", false); // false for synchronous request
-//         xmlHttp.send(null);
-//         json = JSON.parse(xmlHttp.responseText);
-//         return json;
-//     }
-// }
 
 function GET () {
     var xmlHttp = new XMLHttpRequest();
@@ -39,31 +8,15 @@ function GET () {
     console.log(json);
     return json;
 }
-function POST () {
+function PUT (username, tasks, time) {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("POST", "https://seal.nighthawkcodingsociety.com/api/users/time", false); // false for synchronous request
-    xmlHttp.send(null);
-    json = JSON.parse(xmlHttp.responseText);
-    return json;
-}
-function DELETE () {
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("DELETE", "http://seal.nighthawkcodingsociety.com/api/users/", false); // false for synchronous request
-    xmlHttp.send(null);
-    json = JSON.parse(xmlHttp.responseText);
-    return json;
-}
-function PUT () {
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("PUT", "http://seal.nighthawkcodingsociety.com/api/users/", false); // false for synchronous request
-    xmlHttp.send(null);
+    xmlHttp.open("PUT", "https://seal.nighthawkcodingsociety.com/api/users/time/create", false); // false for synchronous request
+    xmlHttp.send("{\"username\": \"" + username + "\", \"tasks\": \"" + tasks + "\", \"time\": \"" + time + "\"}");
     json = JSON.parse(xmlHttp.responseText);
     return json;
 }
 
-// get = GET();
-
-
+get = GET();
 
 getTasks = get[0]["tasks"];
 getTimes = get[0]["times"];

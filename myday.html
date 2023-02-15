@@ -46,5 +46,14 @@
     <!-- Main -->
 
     </body>
-    <script src="./assets/js/animations.js"></script>
+    <!-- <script src="./assets/js/animations.js"></script>
+    <script>
+      function PUT (username, tasks, time) {
+          var xmlHttp = new XMLHttpRequest();
+          xmlHttp.open("PUT", "https://seal.nighthawkcodingsociety.com/api/users/time/create", false); // false for synchronous request
+          xmlHttp.send("{\"username\": \"" + username + "\", \"tasks\": \"" + tasks + "\", \"time\": \"" + time + "\"}");
+          json = JSON.parse(xmlHttp.responseText);
+          return json;
+      }
+    </script> -->
 </html>
