@@ -1,7 +1,7 @@
 // 1 means completed, 0 means not
 function httpGet() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("PUT", "http://13.58.102.35/api/users/updatetasks", false);
+    xmlHttp.open("GET", "http://seal.nighthawkcodingsociety.com/api/users/", false); // false for synchronous request
     xmlHttp.send(null);
     json = JSON.parse(xmlHttp.responseText);
     return json;
