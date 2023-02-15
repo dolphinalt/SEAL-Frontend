@@ -1,7 +1,7 @@
 // 1 means completed, 0 means not
 function httpGet() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", "http://13.58.102.35/api/users/time", false);
+    xmlHttp.open("GET", "http://seal.nighthawkcodingsociety.com/api/users/", false); // false for synchronous request
     xmlHttp.send(null);
     json = JSON.parse(xmlHttp.responseText);
     return json;
@@ -12,6 +12,10 @@ get = httpGet();
 getTasks = get[0]["tasks"];
 getTimes = get[0]["times"];
 getTasksCompleted = get[0]["tasksCompleted"];
+
+for (let i = 0; i < getTasks.length; i++) {
+    push2(getTasks[i], getTimes[i]);
+}
 
 
 
