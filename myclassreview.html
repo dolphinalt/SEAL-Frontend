@@ -1,0 +1,95 @@
+<form action="javascript:review()">
+    Username: <input type="text" id="username" required>
+    <br>
+    <br>
+    Class name: <input type="text" id="className" required>
+    <br>
+    <br>
+    Difficulty: <input type="text" id="difficulty" required>
+    <br>
+    <br>
+    Hours of homework per day: <input type="text" id="hoursOfHw" required>
+    <br>
+    <br>
+    Days between tests: <input type="text" id="daysBtwTest" required>
+    <br>
+    <br>
+    Memorization level: <input type="text" id="memorizationLevel" required>
+    <br>
+    <br>
+    Comments: <input type="text" id="comments" required>
+    <br>
+    <br>
+    <div id="error"></div>
+    <button>Submit</button>
+    <br>
+</form>
+
+
+<script>
+    function review() {
+        var baseurl = "https://seal.nighthawkcodingsociety.com/"
+        // Comment out next line for local testing
+        //var  baseurl = "http://localhost:8085"
+
+        // Authenticate endpoint
+        const login_url = baseurl + 'createclassreview';
+
+
+        
+        // Set body to include login data
+        const body = {
+            username: document.getElementById("username").value,
+            className: document.getElementById("className").value,
+            difficulty: document.getElementById("difficulty").value,
+            hoursOfHw: document.getElementById("hoursOfHw").value,
+            daysBtwTest: document.getElementById("daysBtwTest").value,
+            memorizationLevel: document.getElementById("memorizationLevel").value,
+            comments: document.getElementById("comments").value,
+        };
+
+
+
+        // Set Headers to support cross origin
+        const requestOptions = {
+            method: 'POST',
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'include', // include, *same-origin, omit
+            body: JSON.stringify(body),
+            headers: {
+                "content-type": "application/json",
+            },
+        };
+
+        // Fetch JWT
+        fetch(login_url, requestOptions);
+
+        // Fetch JWT
+            fetch(login_url, requestOptions)
+            .then(response => {
+                // trap error response from Web API
+                if (!response.ok) {
+                    const errorMsg = 'Login error: ' + response.status;
+                    console.log(errorMsg);
+
+                    //HTML error output
+                    const p = document.createElement("p");
+                    p.appendChild(document.createTextNode("Login unsuccessful. Please try again")); 
+                    document.getElementById("loginError").appendChild(p);
+                    return;
+                }
+
+                // Success!!!
+                // Redirect to Database location
+                //window.location.href = "https://lwu1822.github.io/crimebustersrevival/homepage";
+                //window.location.href = ;
+            })
+
+
+    }
+
+
+
+
+</script>
